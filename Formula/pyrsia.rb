@@ -25,6 +25,8 @@ class Pyrsia < Formula
         brew services start pyrsia 
       To check the service status:
         brew services list
+      To stop Pyrsia Node background service:
+        brew services stop pyrsia
     EOS
     s
   end
