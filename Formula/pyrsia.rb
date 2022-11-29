@@ -40,7 +40,7 @@ class Pyrsia < Formula
     process_type :background
     environment_variables envvarhash
     log_path var/"pyrsia/logs/stdout/pyrsia_node.log"
-    error_log_path var/"pyrsia/logs/stderr/pyrsia_node_err.log"
+    error_log_path var/"pyrsia/logs/stdout/pyrsia_node.log"
     working_dir var/"pyrsia"
   end
 
