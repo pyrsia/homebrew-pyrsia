@@ -1,7 +1,7 @@
 # homebrew-pyrsia
 Homebrew formula for the Pyrsia on macOS
 
-## Quick Installation
+## Quick Installation Guide
 Pyrsia can now easily be setup on a local macOS machine by using Homebrew package manager while tapping our Pyrsia Taps 
 (Third-Party Repositories).
 
@@ -49,4 +49,36 @@ pyrsia 0.2.0
 ```
 $ pyrsia ping
 Connection Successful !!
+```
+
+## Installer Release Guide
+
+Following sequence diagram demonstrate what needs to be done after successful release of Pyrsia to update the macOS installer.
+
+```mermaid
+sequenceDiagram
+    title Pyrsia Homebrew Installer Manual Release Process
+    
+    participant p as pyrsia
+    participant gcb as Google Cloud Bucket
+    participant user as User🧍
+    participant hp as homebrew-pyrsia
+    
+    rect rgb(190, 220, 255)
+    note right of p: Release
+    p ->> p: Release Pyrsia
+    p ->> gcb: Github Action - Push Release Archive 
+
+    rect rgb(200, 150, 255)
+    note right of gcb: homebrewrepo/stable/x86_64/<archive_name>
+    note right of gcb: accessible using https://brewrepo.pyrsia.io/stable/x86_64/<archive_name>
+    end
+    end
+    rect rgb(100, 255, 190)
+    user ->> hp: manually update Formula/pyrsia.rb
+    user -->> hp: update archive_name in the url
+    user -->> hp: calculate sha256 and update sha256
+    user -->> hp: update version
+    user ->> hp: checkin & merge
+    end
 ```
