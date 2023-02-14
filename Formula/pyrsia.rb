@@ -1,10 +1,10 @@
 class Pyrsia < Formula
   desc "Open source software that helps protect the open source supply chain"
   homepage "https://pyrsia.io/"
-  url "https://brewrepo.pyrsia.io/stable/x86_64/pyrsia-0.2.3+2805.tar.gz"
-  sha256 "ae41cc095519fd513db79e15cb85234f53832dadf9ceec0979cbd7aee6531084"
+  url "https://brewrepo.pyrsia.io/stable/x86_64/pyrsia-0.2.4+3003.tar.gz"
+  sha256 "180b2fa3aa02548f734cb91ec733b85f70ae60463990a86e50ceec7166f5f975"
   license "Apache-2.0"
-  version "0.2.3"
+  version "0.2.4"
 
   def install
     ENV.deparallelize
